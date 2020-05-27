@@ -11,7 +11,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 /**
- * JUnit 5 test for controller
+ * Instead of  @SpringBootTest markup, HomeControllerTest is annotated with @WebMvcTest. This
+ * is a special test annotation provided by Spring Boot that arranges for the test to run in
+ * the context of a Spring MVC application. More specifically, in this case, it arranges for
+ * HomeController to be registered in Spring MVC so that you can throw requests
+ * against it. @WebMvcTest also sets up Spring support for testing Spring MVC. Although it
+ * could be made to start a server, mocking the mechanics of Spring MVC is sufficient for
+ * your purposes. The test class is injected with a MockMvc object for the test to drive the
+ * mockup.
  * Created :  15.04.2020
  *
  * @author : Uwe Sauerbrei
