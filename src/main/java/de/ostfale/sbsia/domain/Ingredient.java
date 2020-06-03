@@ -20,7 +20,7 @@ public class Ingredient {
         this.type = type;
     }
 
-    public static enum Type {
+    public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
 
