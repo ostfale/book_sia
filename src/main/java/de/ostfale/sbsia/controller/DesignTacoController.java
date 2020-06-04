@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static de.ostfale.sbsia.domain.Ingredient.Type;
+import static de.ostfale.sbsia.domain.Ingredient.Type.*;
 
 /**
  * Controller class
@@ -35,18 +36,18 @@ public class DesignTacoController {
     public void addIngredientsToModel(Model model) {
         log.debug("Init ingredients...");
         List<Ingredient> ingredients = Arrays.asList(
-                new Ingredient("FLTO", "Flour Tortilla", Type.WRAP),
-                new Ingredient("COTO", "Corn Tortilla", Type.WRAP),
-                new Ingredient("GRBF", "Ground Beef", Type.PROTEIN),
-                new Ingredient("CARN", "Carnitas", Type.PROTEIN),
-                new Ingredient("TMTO", "Diced Tomatoes", Type.VEGGIES),
-                new Ingredient("LETC", "Lettuce", Type.VEGGIES),
-                new Ingredient("CHED", "Cheddar", Type.CHEESE),
-                new Ingredient("JACK", "Monterrey Jack", Type.CHEESE),
-                new Ingredient("SLSA", "Salsa", Type.SAUCE),
-                new Ingredient("SRCR", "Sour Cream", Type.SAUCE)
+                new Ingredient("FLTO", "Flour Tortilla", WRAP),
+                new Ingredient("COTO", "Corn Tortilla", WRAP),
+                new Ingredient("GRBF", "Ground Beef", PROTEIN),
+                new Ingredient("CARN", "Carnitas", PROTEIN),
+                new Ingredient("TMTO", "Diced Tomatoes", VEGGIES),
+                new Ingredient("LETC", "Lettuce", VEGGIES),
+                new Ingredient("CHED", "Cheddar", CHEESE),
+                new Ingredient("JACK", "Monterrey Jack", CHEESE),
+                new Ingredient("SLSA", "Salsa", SAUCE),
+                new Ingredient("SRCR", "Sour Cream", SAUCE)
         );
-        Type[] types = Type.values();
+        Type[] types = values();
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
