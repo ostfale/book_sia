@@ -1,5 +1,7 @@
 package de.ostfale.sbsia.domain;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.Objects;
 
 /**
@@ -10,7 +12,9 @@ import java.util.Objects;
  */
 public class Ingredient {
 
+    @Id
     private final String id;
+
     private final String name;
     private final Type type;
 
@@ -23,6 +27,7 @@ public class Ingredient {
     public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
+
 
     public String getId() {
         return id;

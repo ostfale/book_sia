@@ -2,6 +2,7 @@ package de.ostfale.sbsia.domain;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,6 +13,9 @@ import java.util.Objects;
  * @author : Uwe Sauerbrei
  */
 public class Taco {
+
+    private Long id;
+    private Date createdAt;
 
     @NotNull
     @Size(min=5, message="Name must be at least 5 characters long")
@@ -26,6 +30,22 @@ public class Taco {
     public Taco(String name, List<Ingredient> ingredients) {
         this.name = name;
         this.ingredients = ingredients;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getName() {
