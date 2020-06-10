@@ -1,7 +1,8 @@
 package de.ostfale.sbsia.domain;
 
-import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 /**
@@ -10,13 +11,21 @@ import java.util.Objects;
  *
  * @author : Uwe Sauerbrei
  */
+@Entity
 public class Ingredient {
 
     @Id
     private final String id;
 
+
     private final String name;
     private final Type type;
+
+    public Ingredient() {
+        this.id = null;
+        this.name = null;
+        this.type = null;
+    }
 
     public Ingredient(String id, String name, Type type) {
         this.id = id;
