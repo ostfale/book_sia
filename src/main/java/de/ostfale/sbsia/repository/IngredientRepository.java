@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author : Uwe Sauerbrei
  */
-public interface IngredientRepository extends CrudRepository<Ingredient, Long> {
+public interface IngredientRepository extends CrudRepository<Ingredient, String> {
 }
